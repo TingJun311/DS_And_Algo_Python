@@ -1,4 +1,5 @@
 class Node:
+  
   def __init__(self,data):
     self.data = data
     self.left = None
@@ -11,11 +12,13 @@ class BinarySearchTree:
 
   def insert(self,data):
     new_node = Node(data)
+
     if self.root == None:
       self.root = new_node
       return
     else:
       curr_node = self.root
+
       while True:
         if data < curr_node.data:
           #Left
@@ -24,6 +27,7 @@ class BinarySearchTree:
             return 
           else:
             curr_node = curr_node.left
+
         elif data > curr_node.data:
             #Right
             if curr_node.right == None:
@@ -33,27 +37,32 @@ class BinarySearchTree:
               curr_node = curr_node.right
 
   def lookup(self,data):
+
     curr_node = self.root
+
     while True:
       if curr_node == None:
         return False
+
       if curr_node.data == data:
         return True
+
       elif data < curr_node.data:
         curr_node = curr_node.left
+
       else:
         curr_node = curr_node.right
     
   def print_tree(self):
     if self.root != None:
-      self.printt(self.root)
+      self.print(self.root)
 #Inorder Traversal (We get sorted order of elements in tree)
 
-  def printt(self,curr_node):
+  def print(self,curr_node):
     if curr_node != None:
-      self.printt(curr_node.left)
+      self.print(curr_node.left)
       print(str(curr_node.data))
-      self.printt(curr_node.right)
+      self.print(curr_node.right)
     
   #If Intrested
   #code for remove
@@ -123,8 +132,6 @@ class BinarySearchTree:
                       elif currentNode.data > parentNode.data:
                           parentNode.right = leftmost
           return True
-
-        
 
 bst = BinarySearchTree()
 bst.insert(10)

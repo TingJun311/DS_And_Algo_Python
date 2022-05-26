@@ -30,14 +30,14 @@ class DoublyLinkedList:
 
     def insert(self,index,data):
         new_node = Node(data)
-        if index==0:
+        if index == 0:
             self.prepend(data)
             return
         if index >= self.length:
             self.append(data)
             return
         else:         
-            leader = self.traversetoindex(index - 1)
+            leader = self.traverseToIndex(index - 1)
             holder = leader.next
             leader.next = new_node
             new_node.next = holder
@@ -55,7 +55,7 @@ class DoublyLinkedList:
             self.tail.next = None
             self.length -= 1
             return
-        leader = self.traversetoindex(index-1)
+        leader = self.traverseToIndex(index-1)
         unwanted_node = leader.next
         holder = unwanted_node.next
         leader.next = holder
@@ -63,18 +63,18 @@ class DoublyLinkedList:
         self.length -= 1
 
 
-    def traversetoindex(self,index):
+    def traverseToIndex(self,index):
         curr_node = self.head
         i = 0
-        while i!= index:
+        while i != index:
             curr_node = curr_node.next
-            i+=1
+            i += 1
         return curr_node
 
-    def printt(self):
+    def print(self):
         temp = self.head
         while temp != None:
-            print(temp.data , end = ' ')
+            print(temp.data, end = ' ')
             temp = temp.next
         print()
         print('Length ' + str(self.length))        
@@ -85,6 +85,6 @@ d.append(10)
 d.append(5)
 d.append(6)
 d.prepend(1)
-d.insert(2,22)
+d.insert(2, 22)
 d.remove(3)
-d.printt()
+d.print()

@@ -1,9 +1,11 @@
 class Node:
+
   def __init__(self,data):
     self.data = data
     self.next = None
 
 class Stack:
+  
   def __init__(self):
     self.top = None
     self.bottom = None
@@ -14,6 +16,7 @@ class Stack:
 
   def push(self,data):
     new_node = Node(data)
+
     if self.bottom == None:
       self.bottom = new_node
       self.top = self.bottom
@@ -25,32 +28,35 @@ class Stack:
       # print("top:",self.top.data,"top next:",self.top.next.data)
 
   def pop(self):
+
     if not self.top:
       return None
     holderPointer = self.top
     self.top = self.top.next
     self.length -= 1
-    if self.length==0:
+
+    if self.length == 0:
       self.bottom = None
     return holderPointer.data
 
-  def printt(self):
+  def print(self):
     temp = self.top
+
     while temp != None:
-      print(temp.data , end = ' -> ')
+      print(temp.data, end = ' -> ')
       temp = temp.next
     print()
 
-mystack = Stack()
-mystack.push('google')
-mystack.push('microsoft')
-mystack.push('facebook')
-mystack.push('apple')
-mystack.printt()
-x = mystack.peek()
+myStack = Stack()
+myStack.push('google')
+myStack.push('microsoft')
+myStack.push('facebook')
+myStack.push('apple')
+myStack.print()
+x = myStack.peek()
 print(x)
-y=mystack.pop()
+y=myStack.pop()
 print(y)
-mystack.printt()
-qw = mystack.peek()
+myStack.print()
+qw = myStack.peek()
 print(qw)

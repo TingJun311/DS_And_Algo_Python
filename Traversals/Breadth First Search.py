@@ -1,4 +1,6 @@
+
 class Node:
+
   def __init__(self,val):
     self.val = val
     self.left = None
@@ -10,10 +12,13 @@ class BinarySearchTree:
   
   def insert(self,val):
     new_node = Node(val)
+
     if self.root == None:
       self.root = new_node
-      return 
+      return
+
     temp = self.root
+
     while True:
       if new_node.val < temp.val:
         if temp.left == None:
@@ -28,8 +33,9 @@ class BinarySearchTree:
         else:
           temp = temp.right
 
-  def lookup(self,val):
+  def lookup(self, val):
     temp = self.root
+
     while True:
       if temp.val == val:
         return True
@@ -40,35 +46,35 @@ class BinarySearchTree:
       elif val > temp.val:
         temp = temp.right
 
-  def breadthfirstsearch(self):
-    currnode = self.root
-    mylist = []
+  def breathFirstSearch(self):
+    currentNode = self.root
+    myList = []
     queue = []
-    queue.append(currnode)
+    queue.append(currentNode)
 
     while len(queue) > 0:
-      currnode = queue[0]
+      currentNode = queue[0]
       del queue[0]
-      mylist.append(currnode.val)
-      if currnode.left:
-        queue.append(currnode.left)
-      if currnode.right:
-        queue.append(currnode.right)
+      myList.append(currentNode.val)
+      if currentNode.left:
+        queue.append(currentNode.left)
+      if currentNode.right:
+        queue.append(currentNode.right)
     
-    return mylist
+    return myList
   
-  def recursivebfs(self,queue,mylist):
+  def recursiveBfs(self,queue,myList):
     if len(queue) == 0:
-      return mylist
-    currnode = queue[0]
+      return myList
+    currentNode = queue[0]
     del queue[0]
-    mylist.append(currnode.val)
-    if currnode.left:
-      queue.append(currnode.left)
-    if currnode.right:
-      queue.append(currnode.right)
+    myList.append(currentNode.val)
+    if currentNode.left:
+      queue.append(currentNode.left)
+    if currentNode.right:
+      queue.append(currentNode.right)
 
-    return self.recursivebfs(queue,mylist)
+    return self.recursiveBfs(queue, myList)
     
       
 
@@ -83,5 +89,5 @@ tree.insert(1)
 
 x = tree.lookup(170)
 print(x)  
-print(tree.breadthfirstsearch())
-print(tree.recursivebfs([tree.root],[]))
+print(tree.breathFirstSearch())
+print(tree.recursiveBfs([tree.root], []))

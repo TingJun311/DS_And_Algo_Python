@@ -2,7 +2,6 @@ class CircularLinkedList:
     class _Node:
         __slots__ = '_data', '_next'
 
-
         def __init__(self, value, next):
             self._data = value
             self._next = next
@@ -48,7 +47,7 @@ class CircularLinkedList:
         new_node = self._Node(value, None)
         i = 1
         temp = self._head
-        while i < position-1:
+        while i < position - 1:
             temp = temp._next
             i += 1
         new_node._next = temp._next
@@ -73,7 +72,7 @@ class CircularLinkedList:
             print("The list is empty")
         temp = self._head
         i = 1
-        while i < self._size-1:
+        while i < self._size - 1:
             temp = temp._next
             i += 1
         value = temp._next._data
@@ -88,7 +87,7 @@ class CircularLinkedList:
             print("List is empty or the position is invalid")
         temp = self._head
         i = 0
-        while i < position-2:
+        while i < position - 2:
             temp = temp._next
             i += 1
         value = temp._next._data

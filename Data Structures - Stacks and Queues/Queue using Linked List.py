@@ -34,10 +34,10 @@ class Queue:
     self.first = temp
     self.length -= 1
 
-  def printt(self):
+  def print(self):
     temp = self.first
     while temp != None:
-      print(temp.val , end = '->')
+      print(temp.val , end = ' -> ')
       temp = temp.next
     print()
     print(self.length)
@@ -47,8 +47,8 @@ myq.enqueue('google')
 myq.enqueue('microsoft')
 myq.enqueue('facebook')
 myq.enqueue('apple')
-myq.printt()
+myq.print()
 myq.dequeue()
-myq.printt()
+myq.print()
 x = myq.peek()
 print(x)

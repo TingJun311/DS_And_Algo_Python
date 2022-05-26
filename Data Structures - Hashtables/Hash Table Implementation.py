@@ -1,4 +1,4 @@
-class Hashtable:
+class hashTable:
 	def __init__(self):
 		"""
 		Create an array(self.mydict) with a bucket size - which is derived from the load factor.
@@ -40,7 +40,7 @@ class Hashtable:
 		for i in range(len(reference)):
 			if reference[i][0] == key:
 				return reference[i][1]
-		return -1
+		return - 1
 		
 	def remove(self, key):
 		"""
@@ -54,13 +54,15 @@ class Hashtable:
 				return None
 		return None
 
-h=Hashtable()
+h=hashTable()
 h.put('grapes',1000)
 h.put('apples',10)
 h.put('ora',300)
 h.put('banan',200)
+
 print(h.get('grapes'))
 print(h)
+
 h.remove('apples')
 print(h)
 

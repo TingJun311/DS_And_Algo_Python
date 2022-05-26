@@ -1,22 +1,22 @@
 class Graph:
 
   def __init__(self):
-    self.numberofnodes = 0
-    self.adjacentlist = {}
+    self.numberOfNodes = 0
+    self.adjacencyList = {}
 
   def __str__(self):
     return str(self.__dict__)
   
   def addVertex(self,node):
-    self.adjacentlist[node] = []
-    self.numberofnodes += 1
+    self.adjacencyList[node] = []
+    self.numberOfNodes += 1
 
   def addEdge(self,node1,node2):
-    self.adjacentlist[node1].append(node2)
-    self.adjacentlist[node2].append(node1)
+    self.adjacencyList[node1].append(node2)
+    self.adjacencyList[node2].append(node1)
 
   def showConnection(self):
-    for vertex, neighbors in self.adjacentlist.items():
+    for vertex, neighbors in self.adjacencyList.items():
       print(vertex, end = '-->')
       print(' '.join(neighbors))
       
@@ -38,6 +38,6 @@ myGraph.addEdge('1', '0')
 myGraph.addEdge('0', '2') 
 myGraph.addEdge('6', '5')
 print(myGraph)
-myGraph.showconnection()
+myGraph.showConnection()
 
 

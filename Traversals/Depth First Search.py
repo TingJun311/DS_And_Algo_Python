@@ -1,3 +1,4 @@
+
 class Node:
   def __init__(self,val):
     self.val = val
@@ -40,32 +41,29 @@ class BinarySearchTree:
       elif val > temp.val:
         temp = temp.right
 
-  def inorder(self,currnode,mylist):
-    if currnode != None:
-      self.inorder(currnode.left,mylist)
-      mylist.append(currnode.val)
-      self.inorder(currnode.right,mylist)
-    return mylist
+  def inOrder(self,currentNode, myList):
+    if currentNode != None:
+      self.inOrder(currentNode.left, myList)
+      myList.append(currentNode.val)
+      self.inOrder(currentNode.right, myList)
+    return myList
 
-  def preorder(self,currnode,mylist):
-    if currnode!=None:
-      mylist.append(currnode.val)
-      self.preorder(currnode.left,mylist)
-      self.preorder(currnode.right,mylist)
-    return mylist
+  def preOrder(self,currentNode, myList):
+    if currentNode != None:
+      myList.append(currentNode.val)
+      self.preOrder(currentNode.left, myList)
+      self.preOrder(currentNode.right, myList)
+    return myList
 
 #According to Andre's video , below is easily understandable
 
-  def postorder(self,currnode,mylist):
-    if currnode.left:
-      self.postorder(currnode.left,mylist)
-    if currnode.right:
-      self.postorder(currnode.right,mylist)
-    mylist.append(currnode.val)
-    return mylist
-    
-      
-    
+  def postOrder(self,currentNode, myList):
+    if currentNode.left:
+      self.postOrder(currentNode.left, myList)
+    if currentNode.right:
+      self.postOrder(currentNode.right, myList)
+    myList.append(currentNode.val)
+    return myList
 
 tree = BinarySearchTree()
 tree.insert(9)
@@ -75,7 +73,8 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-print(tree.inorder(tree.root,[]))
-print(tree.preorder(tree.root,[]))
-print(tree.postorder(tree.root,[]))
+
+print(tree.inOrder(tree.root, []))
+print(tree.preOrder(tree.root, []))
+print(tree.postOrder(tree.root, []))
 

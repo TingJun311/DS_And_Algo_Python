@@ -1,21 +1,21 @@
-def func(mylist):
+def func(myList):
 
-  for i in range(0,len(mylist)):
-    for j in range(i+1,len(mylist)):
-      if mylist[i] == mylist[j]:
-        return mylist[i] 
+  for i in range(0, len(myList)):
+    for j in range(i + 1, len(myList)):
+      if myList[i] == myList[j]:
+        return myList[i] 
   return 0
 
-def hashtable(mylist):
-  mydict = {}
-  for i in range(0,len(mylist)):
-    if mylist[i] in mydict:
-      return mylist[i]
+def hashTable(myList):
+  myDict = {}
+  for i in range(0, len(myList)):
+    if myList[i] in myDict:
+      return myList[i]
     else:
-      mydict[mylist[i]]=i
+      myDict[myList[i]] = i
   return 0
   
 
-mylist = [2,1,1,2,3,4,5]
-x = hashtable(mylist)
+myList = [2, 1, 1, 2, 3, 4, 5]
+x = hashTable(myList)
 print(x)

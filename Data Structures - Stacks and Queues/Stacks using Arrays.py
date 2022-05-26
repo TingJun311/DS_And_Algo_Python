@@ -1,4 +1,5 @@
 class Stack:
+
   def __init__(self):
     self.arr = []
     self.length = 0
@@ -7,7 +8,7 @@ class Stack:
     return str(self.__dict__)
   
   def peek(self):
-    return self.arr[self.length-1]
+    return self.arr[self.length - 1]
 
   def push(self,value):
     self.arr.append(value)
@@ -15,19 +16,19 @@ class Stack:
 
   def pop(self):
     popped_item = self.arr[self.length-1]
-    del self.arr[self.length-1]
+    del self.arr[self.length - 1]
     self.length -= 1
     return popped_item
 
-mystack = Stack()
-mystack.push('google')
-mystack.push('microsoft')
-mystack.push('facebook')
-mystack.push('apple')
-print(mystack)
-x = mystack.peek()
+myStack = Stack()
+myStack.push('google')
+myStack.push('microsoft')
+myStack.push('facebook')
+myStack.push('apple')
+print(myStack)
+x = myStack.peek()
 print(x)
-mystack.pop()
-print(mystack)
+myStack.pop()
+print(myStack)
 
 
